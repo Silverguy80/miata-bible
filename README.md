@@ -15,7 +15,7 @@ The current first rebuild checkpoint is dependency-light and uses ES modules ser
 
 ## Manual architecture
 
-The repair library is organized as a 14-book, 300-page-equivalent publication plan. It is not presented as a factory service manual. Each procedure record carries generation applicability, symptoms, difficulty, time, tools, safety language, steps, verification, common mistakes, and source guidance. The current checkpoint establishes the reader and content schema; the remaining books will be expanded in editorial tranches rather than padded with repetitive copy.
+The repair library is organized as a 14-book, uncapped publication plan. It is not presented as a factory service manual. Each procedure record carries generation applicability, symptoms, difficulty, time, tools, safety language, steps, verification, common mistakes, and source guidance. The troubleshooting volume now includes symptom-first paths for no-crank, crank/no-start, rough idle, overheating, charging faults, parasitic drain, brake pull, NVH, and water leaks. The remaining books will be expanded in editorial tranches rather than padded with repetitive copy.
 
 ## Persistence
 
