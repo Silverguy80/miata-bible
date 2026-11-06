@@ -19,7 +19,7 @@ The repair library is organized as a 14-book, 300-page-equivalent publication pl
 
 ## Persistence
 
-The garage currently saves a local copy in browser storage through `garage-store.js`. That module is the cloud-sync boundary: authenticated account storage, conflict handling, and cross-device sync can be connected there without rewriting the manual or build features. Export the garage JSON before changing devices.
+The product model is **Free Garage first**: the manual, local vehicle record, future-build planner, installed-parts ledger, history, and JSON export work without a paid account. The garage currently saves a local copy in browser storage through `garage-store.js`. Optional **Sync** is the future paid tier for authenticated account storage, encrypted cross-device backup, conflict handling, and restore history. That service boundary is isolated in `garage-store.js`, so adding Sync will not require rewriting the manual or build features. Export the garage JSON before changing devices.
 
 ## Copyright and safety
 
