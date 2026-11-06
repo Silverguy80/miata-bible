@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101820">
-  <meta name="description" content="Modified Miata Garage App — a source-aware workshop manual, garage, and build planner for NA, NB, NC, and ND Miatas.">
-  <title>Modified Miata Garage App — Workshop edition</title>
+  <meta name="description" content="Modified Miata Race Garage App — a source-aware workshop manual, garage, and build planner for NA, NB, NC, and ND Miatas.">
+  <title>Modified Miata Race Garage App — Workshop edition</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="app" aria-live="polite"></div>
-  <noscript><main class="noscript"><h1>Modified Miata Garage App</h1><p>This workshop requires JavaScript for its manual reader, garage, and build tools.</p></main></noscript>
+  <noscript><main class="noscript"><h1>Modified Miata Race Garage App</h1><p>This workshop requires JavaScript for its manual reader, garage, and build tools.</p></main></noscript>
   <script>
 const generations = [
   { id:'NA', years:'1990–1997 US', engine:'1.6L / 1.8L BP', note:'The original lightweight roadster. Pop-up lamps, simple systems, and the widest restoration spread.', image:'assets/na.jpg', imageCredit:'Ondroeu / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_NA.jpg', watch:['Rust in sills, rails, and front chassis legs','Cooling-system age and brittle plastics','Timing-belt service history'] },
@@ -250,7 +250,7 @@ function render(){
   </div>`;
   bind();
 }
-function renderTopbar(){return `<header class="topbar"><div class="brand-lockup"><div class="brand-mark" aria-hidden="true">MM</div><div><div class="brand-name">Modified Miata Garage App</div><div class="brand-sub">Workshop edition · know what changed</div></div></div><div class="sync-pill"><span class="sync-dot offline"></span> local copy · cloud-ready garage</div></header>`}
+function renderTopbar(){return `<header class="topbar"><div class="brand-lockup"><div class="brand-mark" aria-hidden="true">MM</div><div><div class="brand-name">Modified Miata Race Garage App</div><div class="brand-sub">Workshop edition · know what changed</div></div></div><div class="sync-pill"><span class="sync-dot offline"></span> local copy · cloud-ready garage</div></header>`}
 function renderRail(){return `<aside class="rail" aria-label="Primary navigation"><div class="rail-label">Workbench</div><nav>${navButton('garage','Garage','01')}${navButton('manual','Manual reader','02')}${navButton('genmanual','Generation repair','03')}${navButton('builds','Builds & parts','04')}${navButton('history','History','05')}${navButton('facts','Generations','06')}</nav><div class="rail-label">Manual index</div><nav>${books.slice(0,8).map(b=>`<button class="chapter-link" data-action="open-book" data-book="${b.id}"><span class="chapter-number">${b.number}</span><span>${esc(b.title)}</span></button>`).join('')}</nav><div class="rail-vehicle"><span class="eyebrow">Current vehicle</span><strong>${esc(state.profile.buildName)}</strong><p>${esc(state.profile.year)} · ${esc(genKey())} · ${esc(state.profile.trim)}</p><button class="button text small" data-action="edit-vehicle">Edit profile →</button></div></aside>`}
 function navButton(id,label,number){return `<button class="${state.view===id?'active':''}" data-action="view" data-view="${id}"><span class="chapter-number">${number}</span> ${label}</button>`}
 function renderView(){
