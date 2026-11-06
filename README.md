@@ -1,6 +1,6 @@
-# Modified Miata Race Garage App
+# Modified Miata Bible
 
-Modified Miata Race Garage App is a source-aware workshop companion for NA, NB, NC, and ND owners. This rebuild uses a Japanese workshop / enthusiast-magazine direction: a manual-reader workbench, fitment stamps, generation imagery, structured procedures, a garage profile, build ledger, budget planner, and append-only service history.
+Modified Miata Bible is a source-aware workshop companion for NA, NB, NC, and ND owners. This rebuild uses a Japanese workshop / enthusiast-magazine direction: a manual-reader workbench, fitment stamps, generation imagery, structured procedures, a garage profile, build ledger, budget planner, and append-only service history.
 
 ## Run locally
 
