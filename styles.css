@@ -34,3 +34,14 @@
 .suggestion-actions{display:grid;align-content:start;justify-items:end;gap:7px}
 .suggestion-actions strong{font:700 13px var(--mono);color:var(--paper)}
 @media(max-width:760px){.custom-part-form{grid-template-columns:1fr}.suggestion-card{display:block}.suggestion-actions{display:flex;align-items:center;justify-content:space-between;margin-top:9px}}
+
+/* Top recommendation cards and delivered-cost estimates */
+.top-recommendations{margin:20px 0 24px;padding:18px;background:rgba(16,24,32,.045);border:1px solid rgba(16,24,32,.14)}
+.top-rec-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.top-rec-card{display:flex;flex-direction:column;gap:8px;padding:15px;background:var(--ink-2);color:var(--paper);border-top:3px solid var(--vermilion)}
+.top-rec-card h3{font:700 23px/1 var(--display);text-transform:uppercase;margin:2px 0}
+.top-rec-card p{font-size:12px;color:var(--muted);margin:0;flex:1}
+.top-rec-cost{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:10px;font:600 11px var(--mono);color:var(--muted)}
+.top-rec-cost span{display:flex;justify-content:space-between;gap:10px}.top-rec-cost b{color:var(--paper)}.top-rec-cost strong{color:var(--amber);font-size:13px;margin-top:3px}
+.top-rec-actions{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px}
+@media(max-width:1080px){.top-rec-grid{grid-template-columns:1fr}}
