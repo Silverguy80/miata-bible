@@ -9,3 +9,14 @@
 /* Generation field manual and original circuit maps */
 .generation-copy h1{font:800 35px/1 var(--display);text-transform:uppercase;margin:28px 0 10px}.generation-copy h2{font:700 27px/1.03 var(--display);text-transform:uppercase;margin:25px 0 8px}.generation-copy h3{font:700 21px/1.05 var(--display);text-transform:uppercase;margin:21px 0 7px}.generation-copy h4{font:600 12px var(--mono);text-transform:uppercase;color:var(--vermilion-dark);margin:18px 0 6px}.generation-copy p{max-width:88ch}.generation-copy ul,.generation-copy ol{max-width:86ch;padding-left:24px}.generation-copy li{margin:7px 0}.generation-copy a{color:var(--vermilion-dark);font-weight:700}.diagram-source{margin:16px 0;padding:14px;background:#172630;color:#dce9e4;border-left:4px solid var(--amber);overflow:auto}.diagram-source pre{white-space:pre-wrap;font:12px/1.5 var(--mono);margin:9px 0 0}.circuit-stack{display:grid;gap:12px}.circuit-card{background:var(--ink-2);color:var(--paper);border:1px solid var(--line);padding:17px}.circuit-card h3{font:700 24px/1 var(--display);text-transform:uppercase;margin:8px 0}.circuit-card p{font-size:12px}.circuit-flow{display:flex;align-items:stretch;gap:7px;overflow:auto;padding:13px 0 5px}.circuit-node{min-width:112px;min-height:60px;display:grid;place-items:center;text-align:center;padding:9px;background:#243d4a;border:1px solid rgba(243,182,77,.7);color:var(--paper);font:600 11px/1.2 var(--mono)}.circuit-node:first-child{background:var(--vermilion);border-color:var(--vermilion);color:var(--white)}.circuit-node:last-of-type{background:#2d5549}.circuit-arrow{display:grid;place-items:center;color:var(--amber);font:700 20px var(--mono)}.diagram-caption{color:var(--muted)!important;font:600 10px var(--mono)!important;text-transform:uppercase;letter-spacing:.04em}.generation-copy .notice{color:var(--ink)}
 @media(max-width:760px){.circuit-flow{align-items:flex-start}.circuit-node{min-width:125px}.circuit-arrow{padding-top:18px}}
+
+/* Recommended parts / sponsor-ready editorial layer */
+.recommendation-panel{margin:24px 0 28px;padding:18px;border:1px solid rgba(16,24,32,.16);background:linear-gradient(135deg,rgba(246,241,231,.72),rgba(255,255,255,.58));}
+.recommendation-list{display:grid;gap:10px;}
+.recommendation-card{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:14px 0;border-top:1px solid rgba(16,24,32,.14);}
+.recommendation-card:first-child{border-top:0;}
+.recommendation-card h5{margin:4px 0 5px;font-size:17px;}
+.recommendation-card p{margin:0;max-width:70ch;color:#58676b;font-size:14px;line-height:1.55;}
+.recommendation-card .button{flex:none;white-space:nowrap;}
+.recommendation-disclosure{margin:16px 0 0;color:#58676b;font-size:12px;line-height:1.5;}
+@media (max-width:700px){.recommendation-card{display:block}.recommendation-card .button{display:inline-block;margin-top:10px}}
