@@ -26,3 +26,9 @@ The garage currently saves a local copy in browser storage through `garage-store
 Repair guidance is independently written educational material. It does not reproduce Mazda, Haynes, Chilton, or other commercial service-manual text or diagrams. Always verify exact year, trim, market, engine, transmission, fastener specifications, fluid requirements, and safety procedures in authorized service information before working on a vehicle.
 
 Generation photos are locally hosted with source and license credits in `assets/credits.md`.
+
+## Generation field manual expansion
+
+The `Generation repair` workbench now contains separate NA, NB, NC, and ND field-manual files. The NA and NB sets cover electrical starting/charging/grounds/lighting, engine/fuel/ignition/no-start diagnosis, cooling and overheating, plus driveline, brakes, suspension, corrosion, and top systems. NC and ND add networked electrical diagnosis, ABS/DSC/SRS boundaries, PRHT/RF roof cautions, low-voltage cascades, cooling, driveline, and chassis procedures.
+
+The circuit maps in the UI are original functional abstractions. They are intentionally not factory schematics: they omit proprietary pinouts, connector cavities, wire colors, fuse artwork, and copied service-manual illustrations. The underlying research notes retain source URLs and generation caveats in `docs/research/na-nb/` and `docs/research/nc-nd/`.
