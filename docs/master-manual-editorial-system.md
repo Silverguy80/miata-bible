@@ -6,6 +6,8 @@ The app is one original, source-aware Miata reference. It synthesizes the covera
 
 The manual has no artificial page ceiling. It grows until the useful coverage is complete, while every section earns its place through a repair task, diagnostic decision, generation difference, modification tradeoff, or reusable worksheet.
 
+The quality target is best-in-class usefulness for Miata owners, not a page-count contest. The manual must be more navigable than a stack of books, more transparent than folklore, and more practical than a parts catalog. It should help an owner decide what to test, what to buy, what can wait, what is unsafe, and when the evidence is insufficient to proceed.
+
 ## The anti-duplication rule
 
 A technical idea is written in full only once. Every later appearance uses a short cross-reference, a fitment delta, a warning, or a decision link.
@@ -68,6 +70,18 @@ Inspection forms, measurements, photos, torque records, scan data, alignment res
 - Related canonical procedures
 - Source notes and uncertainty label
 
+## Visual evidence standard
+
+Major systems and difficult jobs receive integrated visuals rather than decorative imagery. Each figure must earn its space with a descriptive caption and an explicit purpose: identifying a component, showing a measurement location, explaining a decision tree, comparing a generation difference, documenting a clearance check, or illustrating a safe setup.
+
+Visuals may include original functional diagrams, annotated photographs, inspection sheets, cutaway-style abstractions, alignment charts, wiring block diagrams, torque or measurement worksheets, and generation comparison plates. They must be independently authored or properly licensed, must not reproduce proprietary manual artwork, and must include alt text or a text equivalent in the reader.
+
+Every major section should distinguish:
+
+- **Facts:** supported by authoritative documentation or repeatable measurement.
+- **Fiction / common misconception:** a popular claim that is incomplete, conditional, or unsupported.
+- **Unknown / verify:** a value or condition that depends on VIN, market, trim, prior modification, or unavailable evidence.
+
 ## Evidence labels
 
 - **Established:** supported by authoritative service information, manufacturer documentation, or repeatable measurement.
@@ -93,3 +107,12 @@ Sources inform coverage, terminology, and verification. They are not rewritten i
 ## Definition of done
 
 The manual is not “complete” because it reaches 500 pages. It is complete only when the coverage matrix has no unexplained gaps, each repeated task resolves to one canonical procedure, each generation difference is captured as an overlay, every major symptom has a diagnostic path, and every safety-critical claim has an appropriate verification boundary.
+
+The publication is ready to call best-in-class only after an editorial gate confirms:
+
+1. Every major system has a canonical procedure, a symptom route, a generation overlay, and a verification step.
+2. The duplicate audit finds no competing full explanations for the same task.
+3. Visual coverage exists for the jobs where a picture or diagram materially reduces error, with captions and text alternatives.
+4. Sources are traceable and scope-labeled; facts, misconceptions, and unknowns are visibly separated.
+5. A Miata owner can find the right procedure from a symptom, a part, a warning light, a generation, or a build goal.
+6. Safety-critical steps include stop conditions and professional-handoff boundaries.
