@@ -1,6 +1,6 @@
 # Mazda MX-5 NC (2006–2015): electrical and diagnostic research note
 
-This note is an original, practical outline for **The Miata Bible**. It describes system relationships and safe diagnostic logic without reproducing Mazda wiring diagrams, proprietary connector pinouts, or factory-manual text. A vehicle-specific wiring diagram, service information, and scan-tool coverage chart are still required for component-level repair.
+This note is an original, practical outline for **Modified Miata**. It describes system relationships and safe diagnostic logic without reproducing Mazda wiring diagrams, proprietary connector pinouts, or factory-manual text. A vehicle-specific wiring diagram, service information, and scan-tool coverage chart are still required for component-level repair.
 
 ## 1. Generation facts and caveats
 

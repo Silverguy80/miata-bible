@@ -1,6 +1,6 @@
 # Mazda MX-5 ND Electrical and Diagnostic Systems (2016–present)
 
-This note is an original, non-factory-manual research outline for *The Miata Bible*. It describes system relationships and safe diagnostic logic without reproducing Mazda wiring diagrams, connector pinouts, proprietary service-manual text, or fuse-box artwork.
+This note is an original, non-factory-manual research outline for *Modified Miata*. It describes system relationships and safe diagnostic logic without reproducing Mazda wiring diagrams, connector pinouts, proprietary service-manual text, or fuse-box artwork.
 
 ## 1. Generation facts and caveats
 

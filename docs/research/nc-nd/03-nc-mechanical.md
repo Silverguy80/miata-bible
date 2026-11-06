@@ -1,7 +1,7 @@
 # Mazda MX-5 NC (2006–2015): mechanical, cooling, driveline, chassis, brakes, suspension, body, and top systems
 
-**Research note for The Miata Bible**  
-**Prepared:** 2026-11-06  
+**Research note for Modified Miata**
+**Prepared:** 2026-11-06
 **Scope:** North American NC emphasis, with cautions where market, engine, roof, transmission, or trim changes alter the procedure. This is an original synthesis for inspection and service planning. It is not a substitute for the VIN-specific Mazda workshop information, recall lookup, or a trained technician for high-risk work.
 
 ## 1. Generation facts and caveats
@@ -197,7 +197,7 @@ The diagnostic order should follow containment, not part popularity: **coolant l
 
 ### Brake and clutch hydraulic relationship
 
-`Reservoir → master cylinder circuit(s) → rigid lines / flexible hoses → caliper pistons`  
+`Reservoir → master cylinder circuit(s) → rigid lines / flexible hoses → caliper pistons`
 `Shared fluid reservoir branch → clutch master → clutch line → slave cylinder → release mechanism.`
 
 A low shared reservoir can create both brake and clutch symptoms. Diagnose fluid level and leaks before bleeding, and never use clutch pedal feel alone to judge brake-system health. Mazda’s owner information treats an illuminated brake warning after the handbrake is released as a stop-and-inspect condition. [6]
@@ -214,7 +214,7 @@ A mid-cycle stop is not automatically a failed motor. The same symptom can be pr
 
 A rear differential whine is a documented NC service-bulletin condition for a defined VIN/build range, but not every rear hum is that defect. The useful test is repeatability under controlled load and coast, followed by inspection rather than guesswork. [7]
 
-## 5. Practical diagnostic traps to call out in The Miata Bible
+## 5. Practical diagnostic traps to call out in Modified Miata
 
 - **“The gauge is normal” is not a cooling-system certificate.** Confirm actual coolant level, pressure integrity, fan behavior, and temperature trend.
 - **A new expansion tank does not repair an overheat-damaged engine.** Check oil, misfire, compression/leak-down, and continued coolant loss after the repair.
