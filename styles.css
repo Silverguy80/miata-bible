@@ -20,3 +20,17 @@
 .recommendation-card .button{flex:none;white-space:nowrap;}
 .recommendation-disclosure{margin:16px 0 0;color:#58676b;font-size:12px;line-height:1.5;}
 @media (max-width:700px){.recommendation-card{display:block}.recommendation-card .button{display:inline-block;margin-top:10px}}
+
+/* Estimated Build planner */
+.build-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.custom-part-form{display:grid;grid-template-columns:minmax(0,1fr) 170px auto;gap:10px;align-items:end;padding:15px;background:rgba(16,24,32,.06);border:1px solid rgba(16,24,32,.14);margin:16px 0 20px}
+.custom-part-form .field{margin:0}
+.suggestion-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:13px 0;border-top:1px solid var(--line)}
+.suggestion-card:first-of-type{border-top:0}
+.suggestion-card h3{font:700 20px/1 var(--display);text-transform:uppercase;margin:5px 0}
+.suggestion-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}
+.suggestion-card.required h3{color:var(--vermilion)}
+.suggestion-card.recommended h3{color:var(--amber)}
+.suggestion-actions{display:grid;align-content:start;justify-items:end;gap:7px}
+.suggestion-actions strong{font:700 13px var(--mono);color:var(--paper)}
+@media(max-width:760px){.custom-part-form{grid-template-columns:1fr}.suggestion-card{display:block}.suggestion-actions{display:flex;align-items:center;justify-content:space-between;margin-top:9px}}
