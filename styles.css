@@ -68,3 +68,11 @@ body{background-color:var(--graphite);background-image:linear-gradient(rgba(112,
 .custom-part-form{border-radius:0;background:rgba(47,108,143,.08);border:1px solid rgba(47,108,143,.32)}.field input,.field select,.field textarea,.search-input{border-radius:0}.sheet .field input,.sheet .field select,.sheet .field textarea{background:#fbf8ef;border-color:rgba(23,33,42,.24)}
 .toast{border-radius:0;background:var(--pit-yellow);box-shadow:6px 6px 0 rgba(0,0,0,.25)}
 @media(max-width:760px){.main{padding:22px 15px 70px}.sheet{padding:22px 18px}.sheet:after{display:none}.topbar{padding:14px 18px}.brand-sub{font-size:9px}.hero-grid{box-shadow:6px 6px 0 rgba(0,0,0,.2)}.hero-photo{min-height:330px}.view-title{font-size:52px}.top-rec-grid{gap:8px}}
+
+/* Reliable Street Build library */
+.street-build-library{margin-top:34px;padding-top:18px;border-top:2px solid var(--pit-blue)}
+.street-option-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.street-option-card{background:linear-gradient(145deg,#14242d,#0d161d);border:1px solid var(--rule-blue);border-left:4px solid var(--pit-yellow);padding:17px;box-shadow:4px 4px 0 rgba(0,0,0,.16);display:flex;flex-direction:column;gap:10px}
+.street-option-card:hover{border-left-color:var(--pit-red);transform:translateY(-2px);transition:transform 180ms cubic-bezier(.23,1,.32,1),border-color 180ms ease}
+.street-option-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.street-option-head .fitment-stamp{font-size:8px;padding:4px 6px;text-align:right}.street-option-card h3{font-size:24px;line-height:1.02;letter-spacing:.035em;margin:0;color:#f3f0e7}.street-option-card p{margin:0;color:#b3c1c5;font-size:12px;line-height:1.55}.street-option-parts{display:grid;gap:4px;border-top:1px solid var(--rule-blue);padding-top:10px;color:#dce5e3;font:11px var(--mono)}.street-option-parts strong{color:var(--pit-yellow);font-size:9px;letter-spacing:.14em;text-transform:uppercase}.street-option-card .notice{margin-top:auto;font-size:11px;padding:10px;background:rgba(189,30,45,.1);border-color:rgba(189,30,45,.6)}.street-option-card .button{align-self:flex-start;margin-top:2px}
+@media(max-width:900px){.street-option-grid{grid-template-columns:1fr}}
