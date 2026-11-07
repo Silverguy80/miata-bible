@@ -9,7 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style id="miata-bible-inline-styles">
+
+.next-step-list{display:grid;gap:10px;margin:6px 0 22px}.next-step-card{display:grid;grid-template-columns:48px 1fr auto;gap:14px;align-items:center;padding:14px 16px;background:linear-gradient(90deg,rgba(19,37,45,.98),rgba(13,28,35,.92));border:1px solid #3c5c66;border-left:4px solid var(--pit-yellow)}.next-step-index{font:700 20px var(--mono);color:var(--pit-yellow);align-self:start}.next-step-copy h3{margin:3px 0 5px;color:#fff;font:700 18px/1.08 var(--display)}.next-step-copy p{margin:0;color:#b7c8cb;font-size:12px;line-height:1.45;max-width:680px}.next-step-card .button{white-space:nowrap}.next-step-list+.context-rail{margin-top:0}@media(max-width:760px){.next-step-card{grid-template-columns:36px 1fr}.next-step-card .button{grid-column:2;justify-self:start}.next-step-copy h3{font-size:16px}}
+
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,10 +21,10 @@
   <noscript><main class="noscript"><h1>Modified Miata Bible</h1><p>This workshop requires JavaScript for its manual reader, garage, and build tools.</p></main></noscript>
   <script>
 const generations = [
-  { id:'NA', years:'1990–1997 US', engine:'1.6L / 1.8L BP', note:'The original lightweight roadster. Pop-up lamps, simple systems, and the widest restoration spread.', image:'assets/na.jpg', imageCredit:'Ondroeu / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_NA.jpg', watch:['Rust in sills, rails, and front chassis legs','Cooling-system age and brittle plastics','Timing-belt service history'] },
-  { id:'NB', years:'1999–2005 US', engine:'1.8L BP / Mazdaspeed', note:'Fixed lamps, sharper bodywork, and a familiar mechanical core with more trim variation.', image:'assets/nb.jpg', imageCredit:'Elise240SX / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:1999_Mazda_MX-5_Miata_Base_in_Highlight_Silver_Metallic,_Front_Left,_08-06-2022.jpg', watch:['Front frame rails and rocker corrosion','Variable trim and brake-package fitment','Timing-belt and cooling history'] },
-  { id:'NC', years:'2006–2015 US', engine:'2.0L MZR', note:'A larger, more planted generation. More room, more weight, and more powertrain variations.', image:'assets/nc.jpg', imageCredit:'M 93 / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_NC_front.JPG', watch:['Chassis weight and ride-height choices','PRHT hardware and drains','Cooling, belt, and suspension wear'] },
-  { id:'ND', years:'2016–present US', engine:'1.5L / 2.0L SKYACTIV-G', note:'Modern lightness with electronic systems, ND1/ND2/ND3 changes, and the RF fastback.', image:'assets/nd.jpg', imageCredit:'Flyz1 / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_(MSP16).jpg', watch:['ND1/ND2/ND3 engine and ECU deltas','Electronic diagnostics before parts swapping','RF roof and body-seal inspection'] }
+  { id:'NA', years:'1990–1997 US', engine:'1.6L / 1.8L BP', note:'The original lightweight roadster. Pop-up lamps, simple systems, and the widest restoration spread.', image:'https://raw.githubusercontent.com/Silverguy80/miata-bible/main/assets/na.jpg', imageCredit:'Ondroeu / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_NA.jpg', watch:['Rust in sills, rails, and front chassis legs','Cooling-system age and brittle plastics','Timing-belt service history'] },
+  { id:'NB', years:'1999–2005 US', engine:'1.8L BP / Mazdaspeed', note:'Fixed lamps, sharper bodywork, and a familiar mechanical core with more trim variation.', image:'https://raw.githubusercontent.com/Silverguy80/miata-bible/main/assets/nb.jpg', imageCredit:'Elise240SX / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:1999_Mazda_MX-5_Miata_Base_in_Highlight_Silver_Metallic,_Front_Left,_08-06-2022.jpg', watch:['Front frame rails and rocker corrosion','Variable trim and brake-package fitment','Timing-belt and cooling history'] },
+  { id:'NC', years:'2006–2015 US', engine:'2.0L MZR', note:'A larger, more planted generation. More room, more weight, and more powertrain variations.', image:'https://raw.githubusercontent.com/Silverguy80/miata-bible/main/assets/nc.jpg', imageCredit:'M 93 / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_NC_front.JPG', watch:['Chassis weight and ride-height choices','PRHT hardware and drains','Cooling, belt, and suspension wear'] },
+  { id:'ND', years:'2016–present US', engine:'1.5L / 2.0L SKYACTIV-G', note:'Modern lightness with electronic systems, ND1/ND2/ND3 changes, and the RF fastback.', image:'https://raw.githubusercontent.com/Silverguy80/miata-bible/main/assets/nd.jpg', imageCredit:'Flyz1 / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_(MSP16).jpg', watch:['ND1/ND2/ND3 engine and ECU deltas','Electronic diagnostics before parts swapping','RF roof and body-seal inspection'] }
 ];
 
 const books = [
