@@ -99,13 +99,25 @@ function renderView(){
   return renderGarage();
 }
 function renderHead(kicker,title,deck,actions=''){return `<div class="view-head"><div><div class="view-kicker">${kicker}</div><h1 class="view-title">${title}</h1>${deck?`<p class="view-deck">${deck}</p>`:''}</div><div class="view-actions">${actions}</div></div>`}
+function nextPartSuggestions(title,gen){
+  const t=String(title).toLowerCase();
+  const ids=[];
+  if(t.includes('fluid')||t.includes('baseline')) ids.push('cooling-refresh','brake-fluid-high-temp');
+  if(t.includes('cooling')) ids.push('cooling-refresh','oil-cooler');
+  if(t.includes('contact')||t.includes('corner')) ids.push('pads-street','tires-200tw');
+  if(t.includes('alignment')||t.includes('fitment')) ids.push('alignment-four-wheel');
+  if(t.includes('timing')) ids.push(gen==='NA'||gen==='NB'?'timing-belt-kit':'cooling-refresh');
+  if(t.includes('clutch')) ids.push(gen==='NA'||gen==='NB'?'clutch-flywheel-na-nb':gen==='NC'?'clutch-flywheel-nc':'clutch-flywheel-nd');
+  if(t.includes('roof')||t.includes('rust')) ids.push('weatherseal-refresh');
+  return [...new Set(ids)].map(id=>parts.find(x=>x.id===id)).filter(Boolean).slice(0,3);
+}
 function garageNextSteps(g){
   const gen=genKey();
   const miles=Number(state.profile.mileage)||0;
   const corpus=[...state.history,...state.parts].map(x=>JSON.stringify(x).toLowerCase()).join(' ');
   const planNames=state.plan.map(x=>String(x.name||'').toLowerCase()).join(' ');
   const steps=[];
-  const add=(priority,title,detail,book='maintenance',action='open-book',view='')=>steps.push({priority,title,detail,book,action,view});
+  const add=(priority,title,detail,book='maintenance',action='open-book',view='')=>steps.push({priority,title,detail,book,action,view,partSuggestions:nextPartSuggestions(title,gen)});
   const has=(...terms)=>terms.some(t=>corpus.includes(t));
   if(!state.history.length && !state.parts.length) add('01','Create the baseline before buying parts','Record cold-start behavior, fluids, leaks, tire condition, brake measurements, charging voltage, cooling behavior, rust, and warning lamps. This is the first build step because it separates urgent repairs from fun upgrades.','maintenance');
   if(!has('oil','engine oil','oil filter') || miles>=5000) add('02','Do the fluid and filter baseline','Confirm engine oil/filter history, gearbox and differential fluid condition, coolant age, brake fluid moisture, and visible leaks. Record the date and odometer rather than relying on memory.','maintenance');
@@ -122,7 +134,7 @@ function garageNextSteps(g){
   const unique=[]; for(const x of steps){if(!unique.some(y=>y.title===x.title))unique.push(x);}
   return unique.slice(0,5);
 }
-function renderNextSteps(g){const steps=garageNextSteps(g);return `<div class="section-band"><div><h2>Next sensible checks</h2><p class="muted">A sequence for this car, based on its generation, mileage, recorded work, and planned parts.</p></div><button class="button text" data-action="open-book" data-book="maintenance">Open maintenance →</button></div><div class="next-step-list">${steps.map((item,i)=>`<article class="next-step-card"><div class="next-step-index">${esc(item.priority||String(i+1).padStart(2,'0'))}</div><div class="next-step-copy"><span class="eyebrow">${item.book==='builds'?'BUILD SEQUENCE':'DO THIS NEXT'}</span><h3>${esc(item.title)}</h3><p>${esc(item.detail)}</p></div><button class="button small" data-action="${item.action}" ${item.action==='open-book'?`data-book="${esc(item.book)}"`:item.action==='view'?`data-view="${esc(item.view)}"`:''}>${item.action==='view'?'Open build ledger →':'Open '+esc(item.book)+' →'}</button></article>`).join('')}</div>`}
+function renderNextSteps(g){const steps=garageNextSteps(g);return `<div class="section-band"><div><h2>Next sensible checks</h2><p class="muted">A sequence for this car, based on its generation, mileage, recorded work, and planned parts.</p></div><button class="button text" data-action="open-book" data-book="maintenance">Open maintenance →</button></div><div class="next-step-list">${steps.map((item,i)=>`<article class="next-step-card"><div class="next-step-index">${esc(item.priority||String(i+1).padStart(2,'0'))}</div><div class="next-step-copy"><span class="eyebrow">${item.book==='builds'?'BUILD SEQUENCE':'DO THIS NEXT'}</span><h3>${esc(item.title)}</h3><p>${esc(item.detail)}</p>${item.partSuggestions?.length?`<div class="next-parts"><span class="eyebrow">PARTS TO PRICE</span>${item.partSuggestions.map(part=>`<div class="next-part"><span><strong>${esc(part.name||part.title)}</strong><small>${part.cost?money(part.cost):'Verify current price'} · fitment check required</small>${catalogLink(part.id)}</span><button class="button text small" data-action="add-plan" data-part="${esc(part.id)}">Add to Future Build</button></div>`).join('')}</div>`:''}</div><button class="button small" data-action="${item.action}" ${item.action==='open-book'?`data-book="${esc(item.book)}"`:item.action==='view'?`data-view="${esc(item.view)}"`:''}>${item.action==='view'?'Open build ledger →':'Open '+esc(item.book)+' →'}</button></article>`).join('')}</div>`}
 function renderGarage(){const g=currentGeneration();const checks=garageNextSteps(g);const installedCost=state.parts.reduce((sum,p)=>sum+p.cost,0);return `<div class="view">${renderHead('01 · vehicle file',`Garage / ${esc(state.profile.buildName)}`,'The place to keep the car as it actually exists: fitment, parts, service history, and the next sensible move.','<button class="button primary" data-action="view" data-view="manual">Open workshop manual</button>')}
   <div class="hero-grid"><div class="hero-photo"><img src="${g.image}" alt="${g.id} generation Mazda MX-5 Miata"><div class="hero-copy"><div class="eyebrow">${g.id} · ${g.years}</div><h2>${g.engine}</h2><p>${esc(g.note)}</p></div></div><div class="hero-stat"><div><span class="stat-label">Current setup</span><div class="fitment-stamp">${g.id} · ${esc(state.profile.market)}</div></div><div><strong>${state.parts.length}</strong><span class="stat-label"> installed changes</span></div><p>${money(installedCost)} tracked parts spend · ${state.history.length} history events</p></div></div>
   <div class="workbench"><section class="sheet" aria-labelledby="garage-profile-title"><div class="index-tabs"><span class="index-tab active">vehicle record</span><span class="index-tab">fitment first</span></div><h2 id="garage-profile-title">The car on the lift</h2><p class="muted">Save the configuration you actually own. The manual and parts screens use it to keep fitment visible.</p>${renderProfileForm()}${renderNextSteps(g)}</section>${renderContextRail(g)}</div>
