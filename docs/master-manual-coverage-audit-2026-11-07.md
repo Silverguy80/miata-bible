@@ -12,9 +12,9 @@ The correct target is not to copy or disguise any referenced manual. The target 
 ## Current inventory
 
 - 14-book manual architecture
-- 54 canonical repair/service procedure records currently indexed by title
+- 126 canonical repair/service procedure records currently indexed by title
 - 9 symptom-oriented diagnostic trees
-- NA/NB/NC/ND generation research overlays and original functional circuit maps
+- NA/NB/NC/ND generation research overlays, original functional circuit maps, and a 10-era Miata History timeline
 - 18 performance-upgrade catalog records
 - Repair-product recommendations attached across the current procedure layer
 - Garage profile, build planner, installed-parts ledger, service history, and state-aware next-step queue
@@ -32,9 +32,11 @@ The current canonical layer includes meaningful coverage for:
 - Timing-belt replacement planning for NA/NB and a timing-chain service boundary for NC/ND.
 - Spark plugs, valve clearance, oil pressure, fuel pressure, intake smoke testing, water pump/thermostat, HVAC diagnosis, transmission fluid, differential fluid, hubs/bearings, brake pads/rotors, brake bleeding, ABS/DSC, scan workflow, aftermarket wiring, pre-purchase inspection, storage, and post-modification validation.
 
-That is useful coverage, but it is not exhaustive repair coverage.
+The catalog is materially broader now, but it is still not exhaustive factory-manual coverage. The new History tab is a separate model archive and does not duplicate the service ledger.
 
 ## Major gaps that still require canonical procedures
+
+The latest expansion added radiator removal, fan-control testing, HVAC/A/C boundaries, clutch and transmission internals, differential and axle service, master-cylinder/booster diagnosis, ABS sensor and tone-ring workflows, steering rack and suspension component service, roof/body operations, starting/charging, CAN and security boundaries, severe-use maintenance, fluid fitment, storage, VIN campaigns, pre-purchase inspections, and post-repair sign-off. Those jobs now have one canonical record each with generation overlays rather than duplicated generation copies.
 
 ### Engine mechanical
 
