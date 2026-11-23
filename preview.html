@@ -3,14 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101820">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="Modified Miata Bible — a source-aware workshop manual, garage, and build planner for NA, NB, NC, and ND Miatas.">
   <title>Modified Miata Bible — Workshop edition</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style id="miata-bible-inline-styles">
-
+/* Mobile manual-reader containment: headings, prose, lists, links, and source blocks must stay inside the sheet. */
+@media (max-width: 760px){
+  html,body,#app,.app-shell,.main,.view,.workbench,.sheet,.procedure-card,.procedure-body,.generation-copy{width:100%;max-width:100%;min-width:0;}
+  .main,.view,.workbench,.sheet,.procedure-card,.procedure-body,.generation-copy{overflow-x:hidden;}
+  .sheet>*,.procedure-card>* ,.procedure-body>* ,.generation-copy>*{max-width:100%;min-width:0;}
+  .generation-copy h1,.generation-copy h2,.generation-copy h3,.generation-copy h4,
+  .procedure-title,.procedure-body p,.procedure-body li,.generation-copy p,
+  .generation-copy li,.generation-copy strong,.generation-copy a{overflow-wrap:anywhere;word-break:normal;}
+  .generation-copy h1{font-size:clamp(27px,8vw,35px);line-height:.98;}
+  .generation-copy h2{font-size:clamp(23px,7vw,29px);line-height:1.02;}
+  .generation-copy h3{font-size:clamp(19px,6vw,23px);line-height:1.05;}
+  .generation-copy p,.generation-copy li{font-size:15px;line-height:1.58;}
+  .generation-copy ul,.generation-copy ol{padding-left:22px;max-width:100%;}
+  .generation-copy pre,.diagram-source pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;max-width:100%;}
+  .procedure-title{font-size:clamp(19px,6vw,25px);line-height:1.02;}
+  .procedure-card summary{max-width:100%;}
+  .procedure-meta{max-width:100%;}
+  .procedure-meta .meta-tag{overflow-wrap:anywhere;}
+}
+</style>
+</head>
+<body>
+<style id="miata-bible-body-styles">
 /* Mobile manual-reader containment: headings, prose, lists, links, and source blocks must stay inside the sheet. */
 @media (max-width: 760px){
   html,body,#app,.app-shell,.main,.view,.workbench,.sheet,.procedure-card,.procedure-body,.generation-copy{width:100%;max-width:100%;min-width:0;}
@@ -31,10 +53,8 @@
   .procedure-meta .meta-tag{overflow-wrap:anywhere;}
 }
 
-</style>
-</head>
-<body>
-<style id="miata-bible-body-styles">
+
+
 :root{
   --ink:#101820;--ink-2:#18232d;--ink-3:#24323d;--paper:#f4f6f7;--paper-2:#e4e8eb;--steel:#aeb8bf;--line:rgba(228,232,235,.17);--vermilion:#a6192e;--vermilion-dark:#7d1021;--amber:#c6cbd0;--green:#75b798;--white:#ffffff;--muted:#aeb9c0;--blue:#3d7397;--mono:'IBM Plex Mono',monospace;--display:'Barlow Condensed',Impact,sans-serif;--body:Inter,system-ui,sans-serif;--radius:3px;--shadow:0 24px 60px rgba(0,0,0,.28)
 }
@@ -135,6 +155,207 @@ body{background-color:var(--graphite);background-image:linear-gradient(rgba(112,
 .recommendation-panel{margin:18px 0 22px;padding:16px;background:linear-gradient(135deg,rgba(19,37,45,.96),rgba(15,25,31,.96));border:1px solid #486774;border-left:4px solid var(--pit-yellow)}.recommendation-panel .section-band{margin-top:0}.recommendation-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.recommendation-card{display:flex;justify-content:space-between;gap:14px;align-items:flex-end;padding:13px;background:#102029;border:1px solid #365562;min-height:148px}.recommendation-card h5{font:700 16px/1.05 var(--display);color:#fff;margin:5px 0}.recommendation-card p{font-size:11px;line-height:1.45;color:#b8c9cc;margin:8px 0 0;max-width:410px}.recommendation-price{color:#a9c1c5;font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em}.recommendation-price strong{color:var(--pit-yellow);font-size:11px;margin-left:4px}.recommendation-card .button{flex:0 0 auto}.recommendation-disclosure{margin:14px 0 0;color:#9fb6bb;font-size:10px;line-height:1.45;border-top:1px solid #365562;padding-top:10px}@media(max-width:760px){.recommendation-list{grid-template-columns:1fr}.recommendation-card{align-items:flex-start;flex-direction:column}.recommendation-card .button{align-self:flex-start}}
 
 .repair-plate{margin:22px 0 26px;background:#101820;border:1px solid #3c5c66;box-shadow:0 8px 0 rgba(16,24,32,.09);overflow:hidden}.repair-plate img{display:block;width:100%;height:auto;max-height:410px;object-fit:cover;background:#101820}.repair-plate figcaption{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 18px;padding:13px 16px;color:#eef3f0}.repair-plate figcaption strong{font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--pit-yellow)}.repair-plate figcaption span{font-size:13px;color:#d1dfe0}.repair-plate figcaption small{grid-column:1/-1;color:#91a8ad;font:10px/1.35 var(--mono);text-transform:uppercase;letter-spacing:.04em}.repair-plate + h4{margin-top:26px}@media(max-width:760px){.repair-plate figcaption{grid-template-columns:1fr}.repair-plate figcaption span{font-size:12px}.repair-plate img{max-height:none}}@media print{.repair-plate{break-inside:avoid;border:1px solid #777;box-shadow:none}.repair-plate figcaption{color:#111;background:#eee}.repair-plate figcaption strong,.repair-plate figcaption span,.repair-plate figcaption small{color:#111}}
+
+
+/* =============================================================
+   MMG sibling brand theme
+   Shared with Modified Miata Gang shop: black / white / red,
+   condensed display type, hard corners, thin accent rules.
+   App-distinct: dark workshop shell + paper reading sheets
+   (shop stays white commerce canvas).
+   ============================================================= */
+:root{
+  --mmg-black:#000000;
+  --mmg-white:#ffffff;
+  --mmg-red:#e10600;
+  --mmg-red-dark:#b10500;
+  --mmg-gray:#8a8a8a;
+  --mmg-gray-2:#5c5c5c;
+  --mmg-smoke:#111111;
+  --mmg-ash:#1a1a1a;
+  --mmg-paper:#f7f7f7;
+  --mmg-paper-ink:#111111;
+
+  /* Remap legacy tokens onto the MMG family */
+  --ink:var(--mmg-smoke);
+  --ink-2:var(--mmg-ash);
+  --ink-3:#242424;
+  --paper:var(--mmg-paper);
+  --paper-2:#e8e8e8;
+  --steel:#9a9a9a;
+  --line:rgba(255,255,255,.14);
+  --vermilion:var(--mmg-red);
+  --vermilion-dark:var(--mmg-red-dark);
+  --amber:var(--mmg-gray);
+  --green:#6fbf8a;
+  --white:var(--mmg-white);
+  --muted:var(--mmg-gray);
+  --blue:var(--mmg-gray-2);
+  --radius:0;
+  --shadow:0 24px 60px rgba(0,0,0,.45);
+
+  --factory-paper:var(--mmg-paper);
+  --factory-paper-deep:#e0e0e0;
+  --pit-blue:var(--mmg-gray-2);
+  --pit-blue-bright:var(--mmg-gray);
+  --pit-red:var(--mmg-red);
+  --pit-yellow:var(--mmg-white);
+  --graphite:var(--mmg-black);
+  --graphite-2:var(--mmg-smoke);
+  --graphite-3:var(--mmg-ash);
+  --rule-blue:rgba(255,255,255,.12);
+  --paper-ink:var(--mmg-paper-ink);
+}
+
+body{
+  background-color:var(--mmg-black);
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:28px 28px;
+  color:var(--mmg-white);
+}
+
+.topbar{
+  background:linear-gradient(180deg,#000,#0d0d0d);
+  border-bottom:1px solid rgba(255,255,255,.12);
+  box-shadow:none;
+}
+.topbar:after{
+  height:3px;
+  background:var(--mmg-red);
+  opacity:1;
+}
+.brand-mark{
+  background:var(--mmg-black);
+  color:var(--mmg-white);
+  border:2px solid var(--mmg-white);
+  box-shadow:4px 4px 0 var(--mmg-red);
+}
+.brand-name{letter-spacing:.08em}
+.brand-sub{color:var(--mmg-gray);font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.sync-dot{border-radius:0;transform:none;background:var(--mmg-red);box-shadow:none}
+.sync-dot.saved{background:var(--green)}
+.sync-dot.offline{background:var(--mmg-red)}
+
+.rail{background:#050505;border-right:1px solid rgba(255,255,255,.1)}
+.rail-label{color:var(--mmg-gray);letter-spacing:.18em}
+.rail button,.top-nav button{
+  border-left:3px solid transparent;
+  color:#9a9a9a;
+  font:600 11px var(--mono);
+  text-transform:uppercase;
+}
+.rail button:hover,.rail button.active,.top-nav button:hover,.top-nav button.active{
+  background:linear-gradient(90deg,rgba(225,6,0,.95),rgba(225,6,0,.18));
+  color:#fff;
+  border-left-color:var(--mmg-white);
+}
+.rail button.active{box-shadow:none}
+.chapter-number{color:var(--mmg-red)}
+.rail-vehicle{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.rail-vehicle:before{background:var(--mmg-black);color:var(--mmg-red)}
+
+.main{
+  background:
+    radial-gradient(circle at 88% 4%,rgba(225,6,0,.16),transparent 28%),
+    var(--mmg-black);
+}
+.view-kicker{color:var(--mmg-red);letter-spacing:.2em}
+.view-title{text-shadow:3px 3px 0 rgba(0,0,0,.55)}
+.view-deck{color:#b0b0b0}
+
+.button{
+  border-radius:0;
+  text-transform:uppercase;
+  font:700 10px var(--mono);
+  letter-spacing:.08em;
+  border-color:rgba(255,255,255,.28);
+}
+.button.primary{
+  background:var(--mmg-red);
+  border-color:var(--mmg-red);
+  color:var(--mmg-white);
+  box-shadow:4px 4px 0 var(--mmg-white);
+}
+.button.primary:hover{background:var(--mmg-red-dark);border-color:var(--mmg-red-dark)}
+.button:hover{border-color:var(--mmg-white);color:var(--mmg-white)}
+.button.text{color:var(--mmg-red)}
+
+.sheet{
+  background:var(--mmg-paper);
+  color:var(--mmg-paper-ink);
+  border-radius:0;
+  border-top:6px solid var(--mmg-red);
+  box-shadow:14px 14px 0 rgba(0,0,0,.35);
+}
+.sheet:after{
+  content:'MODIFIED MIATA BIBLE / WORKSHOP DOCUMENT';
+  color:rgba(0,0,0,.38);
+}
+.index-tab{background:#111;color:#fff;border-radius:0}
+.index-tab.active{background:var(--mmg-red)}
+
+.context-card{
+  background:linear-gradient(145deg,#121212,#0a0a0a);
+  border-color:rgba(255,255,255,.12);
+  box-shadow:5px 5px 0 rgba(0,0,0,.35);
+}
+.context-card:before{color:var(--mmg-red)}
+.fitment-stamp{
+  border-color:var(--mmg-red);
+  color:var(--mmg-red);
+  background:rgba(225,6,0,.08);
+}
+
+.hero-grid{box-shadow:10px 10px 0 rgba(0,0,0,.35)}
+.hero-photo{border:1px solid rgba(255,255,255,.14);background:#0a0a0a}
+.hero-photo:after{
+  background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.05) 75%),
+              linear-gradient(0deg,rgba(225,6,0,.22),transparent 42%);
+}
+.hero-stat{
+  border-left:5px solid var(--mmg-white);
+  background:linear-gradient(145deg,var(--mmg-red),#8f0400);
+}
+.hero-copy .eyebrow,.section-band a,.generation-card a{color:var(--mmg-red)}
+.section-band{border-top:2px solid rgba(255,255,255,.18)}
+
+.quick-card,.build-card,.generation-card,.street-option-card,.performance-card,.top-rec-card{
+  background:linear-gradient(145deg,#161616,#0c0c0c);
+  border-color:rgba(255,255,255,.12);
+  border-top-color:var(--mmg-red);
+}
+.chapter-row{border-left-color:var(--mmg-white);background:rgba(255,255,255,.04)}
+.chapter-row:hover{border-left-color:var(--mmg-red);background:rgba(225,6,0,.1)}
+.chapter-row .num{color:var(--mmg-red)}
+
+.procedure-card{border-left-color:#222;background:rgba(255,255,255,.55)}
+.procedure-card[open]{border-left-color:var(--mmg-red)}
+.procedure-card summary:after{color:var(--mmg-red)}
+
+.top-recommendations,.diagnostic-finder,.other-upgrade-panel,.recommendation-panel{
+  background:linear-gradient(135deg,#efefef,#fafafa);
+  border-top:5px solid var(--mmg-red);
+  box-shadow:7px 7px 0 rgba(0,0,0,.2);
+}
+.performance-toolbar{
+  background:linear-gradient(90deg,var(--mmg-red),#8f0400);
+  box-shadow:6px 6px 0 rgba(255,255,255,.18);
+}
+.performance-toolbar .eyebrow,.price-range,.top-rec-cost strong,.dyno-readout .eyebrow,.dyno-readout strong{color:var(--mmg-white)}
+.dyno-readout strong{color:var(--mmg-red)}
+.dyno-estimator{border-color:#333;border-top-color:var(--mmg-red);background:#090909}
+.toast{background:var(--mmg-white);color:var(--mmg-black);box-shadow:6px 6px 0 var(--mmg-red)}
+
+.mmg-family-link{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:8px;color:var(--mmg-gray);
+  font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;
+}
+.mmg-family-link:hover{color:var(--mmg-white)}
+.mmg-family-link span{display:inline-block;width:18px;height:2px;background:var(--mmg-red)}
 
 </style>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -738,8 +959,7 @@ function render(){
   </div>`;
   bind();
 }
-function renderTopbar(){return `<header class="topbar"><div class="brand-lockup"><div class="brand-mark" aria-hidden="true">MM</div><div><div class="brand-name">Modified Miata Bible</div><div class="brand-sub">Factory pit wall edition · service / setup / records</div></div></div><div class="sync-pill"><span class="sync-dot offline"></span> local garage · sync optional</div></header>`}
-function renderRail(){return `<aside class="rail" aria-label="Primary navigation"><div class="rail-label">Workbench</div><nav>${navButton('garage','Garage','01')}${navButton('manual','Manual reader','02')}${navButton('genmanual','Generation repair','03')}${navButton('builds','Builds & parts','04')}${navButton('history','History','05')}${navButton('miata-history','Miata history','06')}${navButton('facts','Generations','07')}</nav><div class="rail-label">Manual index</div><nav>${books.slice(0,8).map(b=>`<button class="chapter-link" data-action="open-book" data-book="${b.id}"><span class="chapter-number">${b.number}</span><span>${esc(b.title)}</span></button>`).join('')}</nav><div class="rail-vehicle"><span class="eyebrow">Current vehicle</span><strong>${esc(state.profile.buildName)}</strong><p>${esc(state.profile.year)} · ${esc(genKey())} · ${esc(state.profile.trim)}</p><button class="button text small" data-action="edit-vehicle">Edit profile →</button></div></aside>`}
+function renderTopbar(){return `<header class="topbar"><div class="brand-lockup"><div class="brand-mark" aria-hidden="true">MB</div><div><div class="brand-name">Modified Miata Bible</div><div class="brand-sub">Workshop edition · service / setup / records</div><a class="mmg-family-link" href="https://modified-miata-gang-shop.fourthwall.com" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"></span>Modified Miata Gang shop</a></div></div><div class="sync-pill"><span class="sync-dot offline"></span> local garage · sync optional</div></header>`}
 function renderRail(){return `<aside class="rail" aria-label="Primary navigation"><div class="rail-label">Workbench</div><nav>${navButton('garage','Garage','01')}${navButton('manual','Manual reader','02')}${navButton('genmanual','Generation repair','03')}${navButton('builds','Builds & parts','04')}${navButton('fitment','Wheel fitment','05')}${navButton('history','History','06')}${navButton('miata-history','Miata history','07')}${navButton('facts','Generations','08')}</nav><div class="rail-label">Manual index</div><nav>${books.slice(0,8).map(b=>`<button class="chapter-link" data-action="open-book" data-book="${b.id}"><span class="chapter-number">${b.number}</span><span>${esc(b.title)}</span></button>`).join('')}</nav><div class="rail-vehicle"><span class="eyebrow">Current vehicle</span><strong>${esc(state.profile.buildName)}</strong><p>${esc(state.profile.year)} · ${esc(genKey())} · ${esc(state.profile.trim)}</p><button class="button text small" data-action="edit-vehicle">Edit profile →</button></div></aside>`}
 function navButton(id,label,number){return `<button class="${state.view===id?'active':''}" data-action="view" data-view="${id}"><span class="chapter-number">${number}</span> ${label}</button>`}
 function renderView(){
