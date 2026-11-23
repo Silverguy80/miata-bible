@@ -5,6 +5,68 @@ export const generations = [
   { id:'ND', years:'2016–present US', engine:'1.5L / 2.0L SKYACTIV-G', note:'Modern lightness with electronic systems, ND1/ND2/ND3 changes, and the RF fastback.', image:'assets/nd.jpg', imageCredit:'Flyz1 / Wikimedia Commons', source:'https://commons.wikimedia.org/wiki/File:Mazda_MX-5_(MSP16).jpg', watch:['ND1/ND2/ND3 engine and ECU deltas','Electronic diagnostics before parts swapping','RF roof and body-seal inspection'] }
 ];
 
+// Fitment is organized as a measured starting point, not a promise that every tire brand,
+// alignment, ride height, brake package, or body condition will clear. “No modification”
+// means a commonly repeatable stock-body setup at a sane ride height; always test at full
+// steering lock, full bump, and full droop before driving hard.
+export const wheelFitmentProfiles = [
+  {id:'NA', years:'1990–1997', pattern:'4x100', hub:'54.1 mm', factory:'Common OE baselines include 14x5.5–6 +45 with 185/60R14 and 15x6 +45 with 195/50R15; trim and market vary.', tiers:[
+    {level:'no-mod',label:'No body modification',setup:'15x7 +35 to +40 · 195/50R15 or 205/50R15',notes:'Usually the easiest performance street package. Confirm brake clearance, tire shoulder shape, and actual ride height; 205/50 can become tight on tired springs or low-offset wheels.'},
+    {level:'slight-rub',label:'May rub slightly',setup:'15x8 +25 to +35 · 205/50R15 or 225/45R15',notes:'Expect the rear lip and front outer shoulder to be the first contact points. Mild negative camber, a small lip roll, or inner-liner relief may be needed; do not assume “fits” means full-bump clearance.'},
+    {level:'modify',label:'Modification required',setup:'15x8.5–9 +20 to +30 · 225/45R15 or 245/40R15',notes:'Plan narrow coilover springs or perch clearance, rolled/flattened lips, alignment work, and a tire-by-tire test. 245 sections are not a casual street fitment.'},
+    {level:'widebody',label:'Widebody / extensive work',setup:'15x9–10 +0 to +25 · 225/45R15, 245/40R15, or 255/40R15',notes:'Requires a specific flare width, cut/finish work, inner-liner and bumper-edge clearance, and an alignment chosen around the kit—not just wheel poke.'}
+  ], spacers:[
+    {name:'OEM NA 14/15-inch wheel',use:'5–10 mm hub-centric spacer only when a measured inner clearance problem is identified',notes:'A spacer moves the factory wheel outward and increases fender-rub risk. Use longer studs or properly engineered extended hardware; never stack spacers.'},
+    {name:'BBS RS / mesh 4x100',use:'Measure center bore, pad thickness, and backside first; 3–5 mm can solve caliper or arm clearance',notes:'BBS wheels are not one specification. A spacer can change lug engagement, center location, and fender clearance. Verify the wheel’s seat type and hardware.'}
+  ], widebodies:[
+    {kit:'Pandem / Rocket Bunny NA-style flare package',target:'15x9 +0 to +20 · 225/45R15 or 245/40R15',work:'Trim and seal the flare area, set bump travel, check door/bumper transitions, and confirm the kit’s actual flare width before ordering.'},
+    {kit:'Carbon Miata NA/NB wide-fender package',target:'15x9 +10 to +25 · 225/45R15 or 245/40R15',work:'Treat this as a planning range only. Measure the mounted flare, inner tub, and front lock-to-lock clearance on the exact kit.'}
+  ]},
+  {id:'NB', years:'1999–2005', pattern:'4x100', hub:'54.1 mm', factory:'Common OE baselines range from 14x6 +45 / 185/60R14 to 15x6 +40 / 195/50R15, 16x6.5 +40 / 205/45R16, and Mazdaspeed 17x7 +40 / 205/40R17.', tiers:[
+    {level:'no-mod',label:'No body modification',setup:'15x7 +30 to +40 · 195/50R15 or 205/50R15',notes:'A strong all-purpose street and autocross starting point. Sport brakes and tire brand section width still require a physical check.'},
+    {level:'slight-rub',label:'May rub slightly',setup:'15x8 +25 to +35 · 205/50R15 or 225/45R15',notes:'Commonly workable with sensible height, but full compression and steering lock can expose rear-lip or front-shoulder contact. A light roll or small camber correction may be needed.'},
+    {level:'modify',label:'Modification required',setup:'15x9 +35 to +45 · 225/45R15 or 245/40R15',notes:'The high-offset 15x9 track recipe usually needs coilover perch clearance, alignment, and careful tire selection; stock spring-perch cars may not clear the inner barrel.'},
+    {level:'widebody',label:'Widebody / extensive work',setup:'15x9–10 +0 to +25 · 245/40R15 or 255/40R15',notes:'Plan flare-specific measurements, inner tub clearance, bump-stop strategy, and brake/steering lock checks. A wide tire can contact the chassis even when the outer flare looks generous.'}
+  ], spacers:[
+    {name:'OEM NB 15x6 or 16x6.5 wheel',use:'5–10 mm can add outer clearance to coilover hardware, but usually reduces fender margin',notes:'The factory wheel is already a known fitment. Spacer it only for a measured conflict, not to make the wheel look flush without checking the tire.'},
+    {name:'BBS 4x100 wheel',use:'Use the smallest hub-centric spacer that solves the measured inner conflict; 3–8 mm is a test range, not a universal recommendation',notes:'Check BBS pad thickness and center bore. Recalculate effective offset: a 5 mm spacer changes ET40 to an effective ET35.'}
+  ], widebodies:[
+    {kit:'Pandem / Rocket Bunny NB flare package',target:'15x9 +0 to +20 · 245/40R15 or 255/40R15',work:'The kit determines flare position. Mock up with the actual tire, confirm bumper and door gaps, and finish the inner arch so water and debris cannot attack cut metal.'},
+    {kit:'Carbon Miata NB widebody / over-fender package',target:'15x9–10 +10 to +25 · 245/40R15 or 255/40R15',work:'Planning range only; kit revisions differ. Measure flare-to-hub distance and maintain tire clearance through suspension travel.'}
+  ]},
+  {id:'NC', years:'2006–2015', pattern:'5x114.3', hub:'66.1 mm', factory:'Common OE baselines are 16x6.5 or 17x7 around +55; NC1/NC2/NC3 trim, brake, and roof equipment can change clearance.', tiers:[
+    {level:'no-mod',label:'No body modification',setup:'16x8 +38 to +45 · 205/50R16 or 215/45R16',notes:'A practical lightweight upgrade. The ThreePiece NC examples show 16x8 +38 with 205/50R16 and no rubbing on a mildly lowered car.'},
+    {level:'slight-rub',label:'May rub slightly',setup:'17x8 +38 to +45 · 215/45R17 or 225/45R17',notes:'Often works on stock fenders with a sensible height, but 225 section width and alignment matter. Check the large rear lip and inner suspension clearance.'},
+    {level:'modify',label:'Modification required',setup:'17x8.5–9 +30 to +40 · 235/40R17 or 245/40R17',notes:'Plan a rear lip roll, tire clearance inspection, and possibly inner-liner or damper adjustments. 235 and up should not be ordered without a mock-up.'},
+    {level:'widebody',label:'Widebody / extensive work',setup:'17x9–10 +10 to +35 · 245/40R17, 255/40R17, or 275/35R17',notes:'Stock-body “aggressive” and true widebody are different categories. The kit, ride height, wheel barrel, and steering lock determine whether the package is usable.'}
+  ], spacers:[
+    {name:'OEM NC 16/17-inch wheel',use:'5–10 mm hub-centric spacer only after checking the large 66.1 mm hub and wheel pocket',notes:'A spacer can expose the rear lip as the new limit. Use correct extended studs or a properly retained bolt-on spacer with verified thread engagement.'},
+    {name:'BBS 5x114.3 wheel',use:'Measure center bore and spoke/brake clearance; 3–10 mm can move a high-offset BBS away from the damper',notes:'Do not assume an NA/NB BBS wheel is compatible: the NC uses 5x114.3, a different hub, and different brake clearance.'}
+  ], widebodies:[
+    {kit:'Garage Vary / NC over-fender style package',target:'17x9 +20 to +35 · 245/40R17 or 255/40R17',work:'Confirm the actual flare extension and mounting overlap. Preserve inner liner sealing and verify PRHT/soft-top operation after final ride height.'},
+    {kit:'Carbon Miata NC widebody / over-fender package',target:'17x9–10 +10 to +30 · 255/40R17 or 275/35R17',work:'Use as an initial sizing window only. Mock up the kit and tire together; wider is not automatically faster if scrub radius and bump travel become poor.'}
+  ]},
+  {id:'ND', years:'2016–present', pattern:'4x100', hub:'54.1 mm', factory:'Common OE baselines include 16x6.5 +45 with 195/50R16 and 17x7 +45 with 205/45R17; ND1/ND2/ND3, Brembo packages, and RF details matter.', tiers:[
+    {level:'no-mod',label:'No body modification',setup:'16x7 +35 to +45 · 195/50R16 or 205/50R16',notes:'Keeps useful sidewall and usually suits street use. Verify spoke clearance on Brembo-equipped cars.'},
+    {level:'slight-rub',label:'May rub slightly',setup:'17x8 +38 to +45 · 215/45R17 or 225/45R17',notes:'949 lists 17x8 +38 and +45 applications for ND. Actual tire section width, alignment, ride height, and RF/soft-top trim determine whether the outer shoulder touches.'},
+    {level:'modify',label:'Modification required',setup:'17x9 +45 · 235/40R17 or 245/40R17',notes:'A high-offset 17x9 is an aggressive setup that commonly needs coilover/spring-perch clearance and careful front lock/bump testing; wider tires may need fender work.'},
+    {level:'widebody',label:'Widebody / extensive work',setup:'17x9–10 +10 to +35 · 245/40R17, 255/40R17, or 275/35R17',notes:'Treat ND widebody wheel numbers as kit-specific targets. Confirm flare width, bumper return, liner, aero, steering lock, and RF roof clearance before purchasing.'}
+  ], spacers:[
+    {name:'OEM ND 16/17-inch wheel',use:'3–10 mm hub-centric spacer can solve a measured damper or spoke issue, but the tire may become the outer limit',notes:'Recheck lug engagement, hub lip support, fender clearance, and steering effort. Spacer thickness changes effective offset and scrub radius.'},
+    {name:'BBS 4x100 wheel',use:'Start by measuring spoke-to-caliper and inner-barrel clearance; 3–5 mm is often preferable to a large spacer',notes:'Use the correct 4x100 hardware and center bore. A BBS wheel’s pad profile can matter more than its advertised offset.'}
+  ], widebodies:[
+    {kit:'Pandem / Rocket Bunny ND over-fender package',target:'17x9–10 +0 to +25 · 245/40R17 or 255/40R17',work:'Use the manufacturer’s flare template as the authority. Cut/seal work, bumper and liner changes, and a full lock/bump test are part of the install—not optional finishing.'},
+    {kit:'Carbon Miata ND widebody / over-fender package',target:'17x9 +10 to +30 · 245/40R17 or 255/40R17',work:'Planning range only. Measure the installed kit and use the actual tire’s section width; two tires with the same nominal size can occupy different space.'}
+  ]}
+];
+
+export const wheelFitmentSources = [
+  {title:'949 Racing wheel list',url:'https://949racing.com/wheel-list/',note:'Published wheel dimensions, offsets, bolt patterns, load ratings, and ND/4x100 application examples.'},
+  {title:'ThreePiece NC fitment guide',url:'https://www.threepiece.us/blog/guide-to-perfect-fitment-on-your-nc-miata/',note:'NC hub and lug data plus real 16x8, 17x8, and 225-width examples and fender-rolling context.'},
+  {title:'RimList NB wheel guide',url:'https://rimlist.com/guides/mazda/miata/nb/wheels',note:'NB factory wheel, tire, hub, lug, and cross-generation 4x100 reference data.'},
+  {title:'Konig NA/NB fit check',url:'https://konigwheels.com/blogs/fit-check/here-s-what-wheels-fit-your-mx-5-miata-na-nb-fit-check',note:'Manufacturer fit-check guidance for practical NA/NB width and offset ranges.'}
+];
+
 export const miataHistory = [
   {period:'1989–1993 · NA early years',generation:'NA',years:'1990–1993 model years in the United States',headline:'The lightweight roadster arrives',summary:'The NA introduced Mazda’s front-engine, rear-wheel-drive two-seat roadster formula to the United States. Early cars used the 1.6L engine, five-speed manual, pop-up lamps, and a very low curb weight. Automatic transmission and ABS became available for 1991; special editions followed, including British Racing Green and Sunburst Yellow.',milestones:['1989: Chicago Auto Show debut; U.S. sale begins as a 1990 model.','1991: Automatic transmission and ABS become available; first U.S. special edition arrives.','1992: Sunburst Yellow special edition.','1993: Black/red-leather Limited Edition with Bilstein dampers and BBS wheels.'],service:'Early-car priorities: rust, cooling plastics, timing-belt history, seals, brakes, and evidence of chassis repair.',source:'https://www.mazdausa.com/discover/mazda-mx-5-miata-fans'},
   {period:'1994–1997 · NA late years',generation:'NA',years:'1994–1997 model years in the United States',headline:'More displacement, protection, and electronics',summary:'The 1.8L engine replaced the original 1.6L in the U.S. lineup for 1994, bringing more power, larger brakes, additional bracing, and a passenger airbag. The available Torsen limited-slip differential replaced the earlier viscous unit in applicable packages. OBD-II arrived for 1996.',milestones:['1994: 1.8L engine, larger brakes, additional bracing, passenger airbag, and new option structure.','1994–1997: R Package and M Edition variants add suspension, wheel, and trim differences.','1996: OBD-II controls and a power increase for the 1.8L.','1997: Final NA model year; STO and M Edition close the generation.'],service:'Late NA fitment depends heavily on 1.6 versus 1.8, brake package, ABS, differential, and OBD generation.',source:'https://www.caranddriver.com/features/g26111823/mazda-mx-5-miata-history/'},
